@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "SmartShare",
+  "description": "This extension helps share browser information between laptops.",
+  "version": "1.0",
+  "minimum_chrome_version": "24",
+  "permissions": [
+	"activeTab",
+	"tabs",
+	"webRequest"
+  ],
+  "background": {
+		"persistent": true,
+		"scripts": ["main.js"]
+  },
+  "content_scripts": [
+    {
+		"matches" : ["<all_urls>"],
+		"js": ["call.js"]
+    }]
+}
